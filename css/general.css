@@ -28,7 +28,7 @@ Paragraph default: 1.6
 #fae5d3
 #eb984e
 
-- Shades:
+- Shades: 
 #cf711f
 #45260a
 
@@ -61,7 +61,11 @@ Medium: 11px
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
 }
 
@@ -72,20 +76,23 @@ body {
   color: #555;
 }
 
-/**********************************/
-/** GENERAL REUSABLE COMPONENTS */
-/**********************************/
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
 
 .container {
+  /* 1140px */
   max-width: 120rem;
-  margin: 0 auto;
   padding: 0 3.2rem;
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
 }
 
 /* .grid:last-child {
@@ -112,7 +119,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.grid-center-v {
+.grid--center-v {
   align-items: center;
 }
 
@@ -121,13 +128,15 @@ body {
 .heading-tertiary {
   font-weight: 700;
   color: #333;
+  /* color: #45260a; */
+  /* color: #343a40; */
   letter-spacing: -0.5px;
 }
 
 .heading-primary {
-  margin-bottom: 3.2rem;
   font-size: 5.2rem;
   line-height: 1.05;
+  margin-bottom: 3.2rem;
 }
 
 .heading-secondary {
@@ -144,11 +153,11 @@ body {
 
 .subheading {
   display: block;
-  margin-bottom: 1.6rem;
   font-size: 1.6rem;
   font-weight: 500;
   color: #cf711f;
   text-transform: uppercase;
+  margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
 
@@ -156,40 +165,47 @@ body {
 .btn:link,
 .btn:visited {
   display: inline-block;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
 
-  font-size: 2rem;
-  font-weight: 600;
-  text-decoration: none;
-
-  transition: all 0.3s;
-
+  /* Only necessary for .btn */
   border: none;
   cursor: pointer;
   font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 
-.btn-full:link,
-.btn-full:visited {
+.btn--full:link,
+.btn--full:visited {
   background-color: #e67e22;
   color: #fff;
 }
 
-.btn-full:hover,
-.btn-full:active {
+.btn--full:hover,
+.btn--full:active {
   background-color: #cf711f;
 }
 
-.btn-outline:link,
-.btn-outline:visited {
+.btn--outline:link,
+.btn--outline:visited {
   background-color: #fff;
   color: #555;
 }
 
-.btn-outline:hover,
-.btn-outline:active {
+.btn--outline:hover,
+.btn--outline:active {
   background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+
+  /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
 }
 
@@ -248,6 +264,7 @@ body {
   box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
+/* HELPER/SETTINGS CLASSES */
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
